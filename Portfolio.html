@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Washington Benedict - Professional Portfolio</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Configuration for Inter font and smooth scrolling -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+        /* Custom scrollbar for aesthetics */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #111827; /* Dark background */
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #4B5563; /* Gray thumb */
+            border-radius: 4px;
+        }
+		#justify {      
+    text-align: justify;
+}
+    </style>
+    <!-- Configure Tailwind for a modern dark theme -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary': '#6366F1', // Indigo-500
+                        'secondary': '#1F2937', // Gray-800
+                        'background-dark': '#030712', // Near-black
+                        'card-dark': '#111827', // Darker gray
+                    },
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-background-dark text-gray-100 antialiased">
+
+    <!-- Navbar -->
+    <nav class="sticky top-0 z-50 bg-background-dark/95 backdrop-blur-sm shadow-lg border-b border-primary/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo/Name -->
+                <a href="#home" class="text-2xl font-extrabold text-primary tracking-tight">Washington Benedict<span class="text-white">.dev</span></a>
+                
+                <!-- Desktop Nav Links -->
+                <div class="hidden sm:ml-6 sm:flex sm:space-x-4">
+                    <a href="#home" class="text-gray-300 hover:bg-indigo-700 px-3 py-2 rounded-lg text-sm font-medium transition duration-300">Home</a>
+                    <a href="#about" class="text-gray-300 hover:bg-indigo-700 px-3 py-2 rounded-lg text-sm font-medium transition duration-300">About</a>
+                    <a href="#projects" class="text-gray-300 hover:bg-indigo-700 px-3 py-2 rounded-lg text-sm font-medium transition duration-300">Projects</a>
+                    <a href="#contact" class="text-gray-300 hover:bg-indigo-700 px-3 py-2 rounded-lg text-sm font-medium transition duration-300">Contact</a>
+                </div>
+
+                <!-- Mobile Menu Button (Toggle handled by JS) -->
+                <button id="mobile-menu-button" type="button" class="sm:hidden text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary rounded-lg p-2" aria-controls="mobile-menu" aria-expanded="false">
+                    <!-- Icon for menu toggle (SVG) -->
+                    <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu (Hidden by default) -->
+        <div class="sm:hidden hidden" id="mobile-menu">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="#home" class="text-gray-300 hover:bg-card-dark block px-3 py-2 rounded-lg text-base font-medium transition duration-300">Home</a>
+                <a href="#about" class="text-gray-300 hover:bg-card-dark block px-3 py-2 rounded-lg text-base font-medium transition duration-300">About</a>
+                <a href="#projects" class="text-gray-300 hover:bg-card-dark block px-3 py-2 rounded-lg text-base font-medium transition duration-300">Projects</a>
+                <a href="#contact" class="text-gray-300 hover:bg-card-dark block px-3 py-2 rounded-lg text-base font-medium transition duration-300">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content Sections -->
+    <main>
+        
+        <!-- 1. Hero Section -->
+        <section id="home" class="min-h-[calc(100vh-64px)] flex items-center justify-center text-center py-20 px-4 bg-background-dark">
+            <div class="max-w-4xl space-y-8">
+			<!-- Photo Placeholder --><img src="C:\Users\HP\Desktop\Ai video\portfolio\newpoto.jpg" alt="Profile Picture" class="w-36 h-36 rounded-full mx-auto object-cover border-4 border-primary shadow-lg mb-6">
+                <p class="text-lg text-primary font-semibold uppercase tracking-widest animate-pulse">Hello, I'm Washington Benedict</p>
+                <h1 class="text-5xl sm:text-7xl font-extrabold leading-tight">
+                    Front-End <span class="text-primary">Developer</span> & Creative <span class="text-primary">Problem Solver</span>.
+                </h1>
+                <p class="text-xl text-gray-400 max-w-2xl mx-auto">
+                    I build exceptional digital experiences, focusing on performance, accessibility, and user-centric design.
+                </p>
+                <div class="flex justify-center space-x-4 pt-4">
+                    <a href="#projects" class="bg-primary hover:bg-indigo-700 text-white font-bold py-3 px-8 rounded-full shadow-lg shadow-primary/30 transition duration-300 transform hover:scale-105">
+                        View Projects
+                    </a>
+                    <a href="#contact" class="bg-card-dark border border-gray-700 hover:border-primary/50 text-gray-300 font-bold py-3 px-8 rounded-full transition duration-300 transform hover:scale-105">
+                        Get In Touch
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. About Section -->
+        <section id="about" class="py-20 px-4 sm:px-6 lg:px-8 bg-card-dark border-y border-primary/20">
+            <div class="max-w-7xl mx-auto">
+                <h2 class="text-4xl font-bold text-center mb-12 text-white">About Me</h2>
+                
+                <div class="grid md:grid-cols-2 gap-12 items-start">
+                    <!-- Bio -->
+                    <div>
+                        <h3 class="text-2xl font-semibold mb-4 text-primary">My Journey</h3>
+                        <p class="text-gray-400 leading-relaxed mb-4 text-justify" >
+                           Software Developer with 3 years of experience in software development and testing, currently pursuing an MSc in Data Analytics. Strong foundation in Python programming, data processing, and analytical thinking. Actively developing skills in Natural Language Processing (NLP), machine learning, and large language models (LLMs).</p>
+                        <p class="text-gray-400 leading-relaxed text-justify">
+                            Eager to transition into a Data Scientist role, with a keen interest in solving real-world business problems using AI-driven solutions. Adaptable, curious, and committed to continuous learning in the rapidly evolving field of data science.</p>
+                    </div>
+
+                    <!-- Skills -->
+                    <div>
+                        <h3 class="text-2xl font-semibold mb-4 text-primary">Skills and Technical Expertise</h3>
+						<h1 class="text-sm font-semibold mb-4 text-gray-300">Languages</h1>
+                        <div class="flex flex-wrap gap-3">
+                            <!-- Use tags for skills -->
+                            <span class="bg-primary/20 text-primary px-4 py-1.5 rounded-full text-sm font-medium">Python</span>
+                            <span class="bg-primary/20 text-primary px-4 py-1.5 rounded-full text-sm font-medium">SQL</span>
+                            <span class="bg-primary/20 text-primary px-4 py-1.5 rounded-full text-sm font-medium">Java</span>
+                            <span class="bg-primary/20 text-primary px-4 py-1.5 rounded-full text-sm font-medium">JavaScript</span>
+                            <span class="bg-primary/20 text-primary px-4 py-1.5 rounded-full text-sm font-medium">TypeScript</span>
+                            
+                        </div>
+						<br>
+						<h1 class="text-sm font-semibold mb-4 text-gray-300">Concepts</h1>
+                        <div class="flex flex-wrap gap-3">
+                            <!-- Use tags for skills -->
+                            <span class="bg-primary/20 text-primary px-4 py-1.5 rounded-full text-sm font-medium">Machine Learning</span>
+                            <span class="bg-primary/20 text-primary px-4 py-1.5 rounded-full text-sm font-medium">Data Cleaning</span>
+                            <span class="bg-primary/20 text-primary px-4 py-1.5 rounded-full text-sm font-medium">Feature Engineering</span>
+                            <span class="bg-primary/20 text-primary px-4 py-1.5 rounded-full text-sm font-medium">Agile (Scrum)</span>
+                            <span class="bg-primary/20 text-primary px-4 py-1.5 rounded-full text-sm font-medium">Waterfall</span>
+                            
+                        </div>
+						<br>
+						<h1 class="text-sm font-semibold mb-4 text-gray-300">Testing & QA</h1>
+                        <div class="flex flex-wrap gap-3">
+                            <!-- Use tags for skills -->
+                            <span class="bg-primary/20 text-primary px-4 py-1.5 rounded-full text-sm font-medium">Functional</span>
+                            <span class="bg-primary/20 text-primary px-4 py-1.5 rounded-full text-sm font-medium">Integration</span>
+                            <span class="bg-primary/20 text-primary px-4 py-1.5 rounded-full text-sm font-medium">Regression</span>
+                            <span class="bg-primary/20 text-primary px-4 py-1.5 rounded-full text-sm font-medium">System testing</span>
+                            <span class="bg-primary/20 text-primary px-4 py-1.5 rounded-full text-sm font-medium">Manual testing</span>
+                            
+                        </div>
+						<br>
+						<h1 class="text-sm font-semibold mb-4 text-gray-300">Frameworks & Tools</h1>
+                        <div class="flex flex-wrap gap-3">
+                            <!-- Use tags for skills -->
+                            <span class="bg-primary/20 text-primary px-4 py-1.5 rounded-full text-sm font-medium">Power BI</span>
+                            <span class="bg-primary/20 text-primary px-4 py-1.5 rounded-full text-sm font-medium">MS SQL Server</span>
+                            <span class="bg-primary/20 text-primary px-4 py-1.5 rounded-full text-sm font-medium">R</span>
+                            <span class="bg-primary/20 text-primary px-4 py-1.5 rounded-full text-sm font-medium">GIT</span>
+                            <span class="bg-primary/20 text-primary px-4 py-1.5 rounded-full text-sm font-medium">React</span>
+							<span class="bg-primary/20 text-primary px-4 py-1.5 rounded-full text-sm font-medium">Node.js</span>
+                            <span class="bg-primary/20 text-primary px-4 py-1.5 rounded-full text-sm font-medium">REST APIs</span>
+                            <span class="bg-primary/20 text-primary px-4 py-1.5 rounded-full text-sm font-medium">Jupyter Notebooks</span>
+                            <span class="bg-primary/20 text-primary px-4 py-1.5 rounded-full text-sm font-medium">MLflow (basic)</span>
+							<span class="bg-primary/20 text-primary px-4 py-1.5 rounded-full text-sm font-medium">VS Code</span>
+                            <span class="bg-primary/20 text-primary px-4 py-1.5 rounded-full text-sm font-medium">Tableau (basic)</span>
+                            <span class="bg-primary/20 text-primary px-4 py-1.5 rounded-full text-sm font-medium">M (Power Query)</span>
+                            <span class="bg-primary/20 text-primary px-4 py-1.5 rounded-full text-sm font-medium">Snowflake (basic)</span>
+                            
+                        </div>
+						<br>
+						<h1 class="text-sm font-semibold mb-4 text-gray-300">Soft Skills</h1>
+                        <div class="flex flex-wrap gap-3">
+                            <!-- Use tags for skills -->
+                            <span class="bg-primary/20 text-primary px-4 py-1.5 rounded-full text-sm font-medium">Analytical Thinking</span>
+                            <span class="bg-primary/20 text-primary px-4 py-1.5 rounded-full text-sm font-medium">Communication</span>
+                            <span class="bg-primary/20 text-primary px-4 py-1.5 rounded-full text-sm font-medium">Stakeholder Collaboration</span>
+                            <span class="bg-primary/20 text-primary px-4 py-1.5 rounded-full text-sm font-medium">self-driven</span>
+                            <span class="bg-primary/20 text-primary px-4 py-1.5 rounded-full text-sm font-medium">business-focused mindset</span>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+		<!-- 3. Education Section -->
+        <section id="education" class="py-20 px-4 sm:px-6 lg:px-8 bg-background-dark">
+            <div class="max-w-7xl mx-auto">
+                <h2 class="text-4xl font-bold text-center mb-16 text-white">Educations</h2>
+
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                    <!-- Project Card 1 -->
+                    <div class="bg-card-dark p-6 rounded-xl shadow-2xl hover:shadow-primary/30 transition duration-300 transform hover:-translate-y-1 border border-card-dark hover:border-primary/40">
+                        <h3 class="text-2xl font-bold mb-3 text-white">Advanced Level - Biological Science</h3>
+                        <p class="text-sm text-primary mb-4">BT/ Koddaikallar Maha Vidyalaya - Sri Lanka</p>
+                        <p class="text-gray-400 mb-6 text-justify">I studied Biological Science at Koddaikallar Maha Vidyalaya for my high school education, where I developed an interest in science and problem-solving.</p>
+                        <div class="flex space-x-4">
+                           <a href="#" class="text-primary hover:text-indigo-400 font-medium transition duration-300">More About High School &rarr;</a>
+                        </div>
+                    </div>
+
+                    <!-- Project Card 2 -->
+                    <div class="bg-card-dark p-6 rounded-xl shadow-2xl hover:shadow-primary/30 transition duration-300 transform hover:-translate-y-1 border border-card-dark hover:border-primary/40">
+                        <h3 class="text-2xl font-bold mb-3 text-white">BSc (Hons) in Information Technology</h3>
+                        <p class="text-sm text-primary mb-4">Sri Lanka Institute Of Information Technology - SLIIT, Sri Lanka</p>
+                        <p class="text-gray-400 mb-6 text-justify">I hold a BSc (Hons) in Information Technology from SLIIT, where I developed a strong foundation in software development, data management, and emerging technologies.</p>
+                        <div class="flex space-x-4">
+                            <a href="https://www.sliit.lk/" class="text-primary hover:text-indigo-400 font-medium transition duration-300">More About University &rarr;</a>
+                        </div>
+                    </div>
+
+                    <!-- Project Card 3 -->
+                    <div class="bg-card-dark p-6 rounded-xl shadow-2xl hover:shadow-primary/30 transition duration-300 transform hover:-translate-y-1 border border-card-dark hover:border-primary/40">
+                        <h3 class="text-2xl font-bold mb-3 text-white">MSc in IT for Business Data Analytics</h3>
+                        <p class="text-sm text-primary mb-4">International Bussiness School (IBS)- Budapest, Hungary.</p>
+                        <p class="text-gray-400 mb-6 text-justify">I am currently pursuing my Master’s in Data Analytics at IBS, where I’m gaining expertise in statistical analysis, data visualization, and machine learning. My academic and project experience focus on leveraging data to drive insights and support informed business decisions.</p>
+                        <div class="flex space-x-4">
+                            <a href="https://www.ibs-b.hu/en/" class="text-primary hover:text-indigo-400 font-medium transition duration-300">More About University &rarr;</a>  
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+		
+		<!-- 4. Work Experience Section -->
+        <section id="experience" class="py-20 px-4 sm:px-6 lg:px-8 bg-background-dark border-t border-primary/20">
+            <div class="max-w-7xl mx-auto">
+                <h2 class="text-4xl font-bold text-center mb-16 text-white">Work Experience</h2>
+
+                <div class="space-y-12">
+                    
+                    <!-- Job Entry 1 -->
+                    <div class="grid md:grid-cols-4 gap-6 p-6 bg-card-dark rounded-xl shadow-2xl transition duration-300 hover:shadow-primary/20 border border-card-dark hover:border-primary/30">
+                        <div class="md:col-span-1">
+                            <p class="text-lg font-bold text-primary">Software Engineer (Front-End) Associate </p>
+                            <p class="text-sm text-gray-500">Jan 2024 - Feb 2025</p>
+                        </div>
+                        <div class="md:col-span-3">
+                            <h3 class="text-2xl font-semibold mb-2 text-white">vital masks pvt ltd</h3>
+							<ul class="text-gray-400 leading-relaxed text-justify" style="list-style-type:circle">
+								<li>Translated design wireframes into high-performance, easily maintained, and scalable web pages using technologies such as HTML5, CSS5, JavaScript, and React.js.</li>
+								<li>Improved website load time and boosted user engagement through performance enhancements.</li>
+								<li>Collaborated closely with UX/UI designers to maintain the visual integrity of the user interface.</li>
+								<li>Led the development of reusable UI components, significantly reducing the time needed to implement new features. </li>
+								<li>Designed and optimized interactive, responsive websites using HTML5, CSS5, JavaScript, TypeScript, Bootstrap, Tailwind CSS, and modern frameworks like React.js and Next.js.</li>
+								<li>Converted wireframes and mockups into fully functional, cross-browser-compatible web pages through close collaboration with designers.</li>
+							</ul>
+                        </div>
+						<div class="flex space-x-4">
+                            <a href="https://www.vitalmasks.lk/" class="text-primary hover:text-indigo-400 font-medium transition duration-300">More About Work Place &rarr;</a>  
+                        </div>
+                    </div>
+
+                    <!-- Job Entry 2 -->
+                     <div class="grid md:grid-cols-4 gap-6 p-6 bg-card-dark rounded-xl shadow-2xl transition duration-300 hover:shadow-primary/20 border border-card-dark hover:border-primary/30">
+                        <div class="md:col-span-1">
+                            <p class="text-lg font-bold text-primary">Software Engineer Associate</p>
+                            <p class="text-sm text-gray-500">Dec 2021 - Dec 2023</p>
+                        </div>
+                        <div class="md:col-span-3">
+                            <h3 class="text-2xl font-semibold mb-2 text-white">HCL Tech Lanka - 5G CNF Cisco Project</h3>
+                            <ul class="text-gray-400 leading-relaxed text-justify" style="list-style-type:circle">
+								<li>Conducted manual testing for 5G Core Network Functions (CNF), with a focus on the PCF (Policy Control Function) and CNDP (Cloud-Native Data Plane) modules.</li>
+								<li>Created comprehensive test plans and detailed test cases to ensure complete coverage of functional requirements.</li>
+								<li>Performed functional and regression testing to validate new features and maintain version stability. </li>
+								<li>Collaborated actively with development and QA teams to report bugs, verify fixes, and improve overall software quality. </li>
+								<li>Gained hands-on experience with telecom network functions and cloud-native architectures in a fast-paced, agile environment. </li>
+								
+							</ul>
+                        </div>
+						<div class="flex space-x-4">
+                            <a href="https://www.hcltech.com/" class="text-primary hover:text-indigo-400 font-medium transition duration-300">More About Work Place &rarr;</a>  
+                        </div>
+                    </div>
+					<!-- Job Entry 3 -->
+					<div class="grid md:grid-cols-4 gap-6 p-6 bg-card-dark rounded-xl shadow-2xl transition duration-300 hover:shadow-primary/20 border border-card-dark hover:border-primary/30">
+                        <div class="md:col-span-1">
+                            <p class="text-lg font-bold text-primary">Software Engineer Intern </p>
+                            <p class="text-sm text-gray-500">Mar 2020 - Oct 2020</p>
+                        </div>
+                        <div class="md:col-span-3">
+                            <h3 class="text-2xl font-semibold mb-2 text-white">Central Engineering Consultancy Bureau </h3>
+                            
+							<ul class="text-gray-400 leading-relaxed text-justify" style="list-style-type:circle">
+								<li>Practiced project management skills by actively participating in daily scrum meetings and weekly progress reviews.</li>
+								<li>Maintained version control using GitHub to manage code changes and collaboration efficiently.</li>
+								<li>Developed an Android Attendance App using Android Studio, applying core concepts of mobile app development.</li>
+								
+							</ul>
+                        </div>
+						<div class="flex space-x-4">
+                            <a href="https://www.cecb.lk/" class="text-primary hover:text-indigo-400 font-medium transition duration-300 text-align:left">More About Work Place &rarr;</a>  
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Projects Section -->
+        <section id="projects" class="py-20 px-4 sm:px-6 lg:px-8 bg-background-dark">
+            <div class="max-w-7xl mx-auto">
+                <h2 class="text-4xl font-bold text-center mb-16 text-white"> Projects</h2>
+
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                    <!-- Project Card 1 -->
+                    <div class="bg-card-dark p-6 rounded-xl shadow-2xl hover:shadow-primary/30 transition duration-300 transform hover:-translate-y-1 border border-card-dark hover:border-primary/40">
+                        <h3 class="text-2xl font-bold mb-3 text-white">Code Complecity Measurement</h3>
+                        <p class="text-sm text-primary mb-4">JavaScript, Java, SCSS and CSS</p>
+                        <p class="text-gray-400 mb-6 text-justify">As software systems become increasingly complex, effective management of this complexity is vital. The study presents the Code Complexity Measuring Tool (CCMT), which addresses challenges in assessing code complexity by incorporating nine key factors: size, control structure type, nesting level, inheritance level, try-catch blocks, recursion, array declarations, compound conditionals, and input-output statements. By assigning distinct weightings to these elements, CCMT facilitates precise complexity estimation. Its adaptability makes it a forward-looking tool, suitable for integration into advanced fields like AI-driven software development, ensuring its relevance in the dynamic software engineering landscape.</p>
+                        <div class="flex space-x-4">
+                            <a href="https://cdeitsolution.azurewebsites.net/Home.jsp" class="text-primary hover:text-indigo-400 font-medium transition duration-300">View Live &rarr;</a>
+                            <a href="https://github.com/thivi97/3rdyear_newproject.git" class="text-gray-400 hover:text-white transition duration-300">GitHub &rarr;</a>
+                        </div>
+                    </div>
+
+                    <!-- Project Card 2 -->
+                    <div class="bg-card-dark p-6 rounded-xl shadow-2xl hover:shadow-primary/30 transition duration-300 transform hover:-translate-y-1 border border-card-dark hover:border-primary/40">
+                        <h3 class="text-2xl font-bold mb-3 text-white">Drowsiness Detection System</h3>
+                        <p class="text-sm text-primary mb-4">Jupyter Notebook, Python and OpenCV</p>
+                        <p class="text-gray-400 mb-6 text-justify">A computer vision system that can automatically detect driver drowsiness in a real-time video stream and then play an alarm if the driver appears to be drowsy. Not train model only used OpenCv library and Haar casecade.</p>
+                        <div class="flex space-x-4">
+                            <a href="https://github.com/washin-git/Drowsiness_Detection_System_OpenCv.git" class="text-primary hover:text-indigo-400 font-medium transition duration-300">GitHub &rarr;</a>
+                           
+                        </div>
+                    </div>
+
+                    <!-- Project Card 3 -->
+                    <div class="bg-card-dark p-6 rounded-xl shadow-2xl hover:shadow-primary/30 transition duration-300 transform hover:-translate-y-1 border border-card-dark hover:border-primary/40">
+                        <h3 class="text-2xl font-bold mb-3 text-white">Smart Driver Assistant</h3>
+                        <p class="text-sm text-primary mb-4">Jupyter Notebook, Python, OpenCV, HTML, JavaScript and CSS</p>
+                        <p class="text-gray-400 mb-6 text-justify">This developed system was created with the primary goal of assisting users/drivers in reducing the problems they experience on a daily basis.</p>
+                        <div class="flex space-x-4">
+                            <a href="https://smart-driver-assistant.netlify.app/" class="text-primary hover:text-indigo-400 font-medium transition duration-300">More About Project &rarr;</a>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. Contact Section -->
+        <section id="contact" class="py-20 px-4 sm:px-6 lg:px-8 bg-card-dark border-t border-primary/20">
+            <div class="max-w-xl mx-auto text-center">
+                <h2 class="text-4xl font-bold mb-4 text-white">Let's Connect</h2>
+                <p class="text-xl text-gray-400 mb-12">I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.</p>
+
+                <!-- Updated Contact Form using Formspree structure -->
+                <form class="space-y-6 text-left" action="https://formspree.io/f/mdkpdlzy" method="POST">
+                    <div>
+                        <label for="name" class="block text-sm font-medium text-gray-300 mb-1">Name</label>
+                        <input type="text" id="name" name="name" class="w-full px-4 py-3 bg-background-dark border border-gray-700 rounded-lg focus:border-primary focus:ring-primary text-white transition duration-200" placeholder="Your Name" required>
+                    </div>
+                    <div>
+                        <label for="email" class="block text-sm font-medium text-gray-300 mb-1">Email</label>
+                        <input type="email" id="email" name="_replyto" class="w-full px-4 py-3 bg-background-dark border border-gray-700 rounded-lg focus:border-primary focus:ring-primary text-white transition duration-200" placeholder="your.email@example.com" required>
+                    </div>
+                    <div>
+                        <label for="message" class="block text-sm font-medium text-gray-300 mb-1">Message</label>
+                        <textarea id="message" name="message" rows="4" class="w-full px-4 py-3 bg-background-dark border border-gray-700 rounded-lg focus:border-primary focus:ring-primary text-white transition duration-200" placeholder="Tell me about your project..." required></textarea>
+                    </div>
+                    
+                    <button type="submit" class="w-full bg-primary hover:bg-indigo-700 text-white font-bold py-3 rounded-lg shadow-lg shadow-primary/30 transition duration-300 transform hover:scale-[1.01]">
+                        Send Message
+                    </button>
+                  <!--   <p class="text-xs text-gray-500 pt-2 text-center">To make this form functional, replace `your-form-id` in the `action` attribute above with your unique ID from a service like Formspree or Netlify Forms.</p> -->
+                </form>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-background-dark py-8 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-gray-500">
+            <p>&copy; <span id="current-year"></span> Washington Benedict. All rights reserved.</p>
+            <div class="mt-4 space-x-4">
+                <a href="https://linkedin.com/in/benedict-washington" class="text-gray-400 hover:text-primary transition duration-300">LinkedIn</a>
+                <span class="text-gray-600">|</span>
+                <a href="https://github.com/washin-git" class="text-gray-400 hover:text-primary transition duration-300">GitHub</a>
+                <span class="text-gray-600">|</span>
+                <a href="https://x.com/imBWashin" class="text-gray-400 hover:text-primary transition duration-300">X</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Mobile Menu and Footer Year -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            // 1. Mobile Menu Toggle
+            mobileMenuButton.addEventListener('click', () => {
+                const isExpanded = mobileMenuButton.getAttribute('aria-expanded') === 'true' || false;
+                mobileMenuButton.setAttribute('aria-expanded', !isExpanded);
+                mobileMenu.classList.toggle('hidden');
+            });
+
+            // 2. Hide Mobile Menu when a link is clicked
+            mobileMenu.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                    mobileMenuButton.setAttribute('aria-expanded', 'false');
+                });
+            });
+
+            // 3. Set Current Year in Footer
+            document.getElementById('current-year').textContent = new Date().getFullYear();
+        });
+    </script>
+
+</body>
+</html>

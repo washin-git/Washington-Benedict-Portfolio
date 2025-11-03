@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Name - Professional Portfolio</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Configuration for Inter font and smooth scrolling -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+        /* Custom scrollbar for aesthetics */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #111827; /* Dark background */
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #4B5563; /* Gray thumb */
+            border-radius: 4px;
+        }
+    </style>
+    <!-- Configure Tailwind for a modern dark theme -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary': '#6366F1', // Indigo-500
+                        'secondary': '#1F2937', // Gray-800
+                        'background-dark': '#030712', // Near-black
+                        'card-dark': '#111827', // Darker gray
+                    },
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-background-dark text-gray-100 antialiased">
+
+    <!-- Navbar -->
+    <nav class="sticky top-0 z-50 bg-background-dark/95 backdrop-blur-sm shadow-lg border-b border-primary/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo/Name -->
+                <a href="#home" class="text-2xl font-extrabold text-primary tracking-tight">YourName<span class="text-white">.dev</span></a>
+                
+                <!-- Desktop Nav Links -->
+                <div class="hidden sm:ml-6 sm:flex sm:space-x-4">
+                    <a href="#home" class="text-gray-300 hover:bg-card-dark px-3 py-2 rounded-lg text-sm font-medium transition duration-300">Home</a>
+                    <a href="#about" class="text-gray-300 hover:bg-card-dark px-3 py-2 rounded-lg text-sm font-medium transition duration-300">About</a>
+                    <a href="#projects" class="text-gray-300 hover:bg-card-dark px-3 py-2 rounded-lg text-sm font-medium transition duration-300">Projects</a>
+                    <a href="#contact" class="text-gray-300 hover:bg-card-dark px-3 py-2 rounded-lg text-sm font-medium transition duration-300">Contact</a>
+                </div>
+
+                <!-- Mobile Menu Button (Toggle handled by JS) -->
+                <button id="mobile-menu-button" type="button" class="sm:hidden text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary rounded-lg p-2" aria-controls="mobile-menu" aria-expanded="false">
+                    <!-- Icon for menu toggle (SVG) -->
+                    <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu (Hidden by default) -->
+        <div class="sm:hidden hidden" id="mobile-menu">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="#home" class="text-gray-300 hover:bg-card-dark block px-3 py-2 rounded-lg text-base font-medium transition duration-300">Home</a>
+                <a href="#about" class="text-gray-300 hover:bg-card-dark block px-3 py-2 rounded-lg text-base font-medium transition duration-300">About</a>
+                <a href="#projects" class="text-gray-300 hover:bg-card-dark block px-3 py-2 rounded-lg text-base font-medium transition duration-300">Projects</a>
+                <a href="#contact" class="text-gray-300 hover:bg-card-dark block px-3 py-2 rounded-lg text-base font-medium transition duration-300">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content Sections -->
+    <main>
+        
+        <!-- 1. Hero Section -->
+        <section id="home" class="min-h-[calc(100vh-64px)] flex items-center justify-center text-center py-20 px-4 bg-background-dark">
+            <div class="max-w-4xl space-y-8">
+                <p class="text-lg text-primary font-semibold uppercase tracking-widest animate-pulse">Hello, I'm [Your Name]</p>
+                <h1 class="text-5xl sm:text-7xl font-extrabold leading-tight">
+                    Full-Stack <span class="text-primary">Developer</span> & Creative <span class="text-primary">Problem Solver</span>.
+                </h1>
+                <p class="text-xl text-gray-400 max-w-2xl mx-auto">
+                    I build exceptional digital experiences, focusing on performance, accessibility, and user-centric design.
+                </p>
+                <div class="flex justify-center space-x-4 pt-4">
+                    <a href="#projects" class="bg-primary hover:bg-indigo-700 text-white font-bold py-3 px-8 rounded-full shadow-lg shadow-primary/30 transition duration-300 transform hover:scale-105">
+                        View Projects
+                    </a>
+                    <a href="#contact" class="bg-card-dark border border-gray-700 hover:border-primary/50 text-gray-300 font-bold py-3 px-8 rounded-full transition duration-300 transform hover:scale-105">
+                        Get In Touch
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. About Section -->
+        <section id="about" class="py-20 px-4 sm:px-6 lg:px-8 bg-card-dark border-y border-primary/20">
+            <div class="max-w-7xl mx-auto">
+                <h2 class="text-4xl font-bold text-center mb-12 text-white">About Me</h2>
+                
+                <div class="grid md:grid-cols-2 gap-12 items-start">
+                    <!-- Bio -->
+                    <div>
+                        <h3 class="text-2xl font-semibold mb-4 text-primary">My Journey</h3>
+                        <p class="text-gray-400 leading-relaxed mb-4">
+                            Starting my development journey 5 years ago, I've cultivated a deep understanding of modern web technologies. My passion lies in taking complex challenges and translating them into clean, efficient, and user-friendly applications. I thrive in collaborative environments and am dedicated to continuous learning.
+                        </p>
+                        <p class="text-gray-400 leading-relaxed">
+                            I specialize in creating robust backend systems and intuitive frontend interfaces. Whether it's optimizing database queries or designing accessible UI components, I strive for excellence in every layer of the stack.
+                        </p>
+                    </div>
+
+                    <!-- Skills -->
+                    <div>
+                        <h3 class="text-2xl font-semibold mb-4 text-primary">Technical Expertise</h3>
+                        <div class="flex flex-wrap gap-3">
+                            <!-- Use tags for skills -->
+                            <span class="bg-primary/20 text-primary px-4 py-1.5 rounded-full text-sm font-medium">React & Next.js</span>
+                            <span class="bg-primary/20 text-primary px-4 py-1.5 rounded-full text-sm font-medium">Node.js & Express</span>
+                            <span class="bg-primary/20 text-primary px-4 py-1.5 rounded-full text-sm font-medium">TypeScript</span>
+                            <span class="bg-primary/20 text-primary px-4 py-1.5 rounded-full text-sm font-medium">Python & Django</span>
+                            <span class="bg-primary/20 text-primary px-4 py-1.5 rounded-full text-sm font-medium">Tailwind CSS</span>
+                            <span class="bg-primary/20 text-primary px-4 py-1.5 rounded-full text-sm font-medium">AWS / Azure</span>
+                            <span class="bg-primary/20 text-primary px-4 py-1.5 rounded-full text-sm font-medium">PostgreSQL / MongoDB</span>
+                            <span class="bg-primary/20 text-primary px-4 py-1.5 rounded-full text-sm font-medium">Git & CI/CD</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Projects Section -->
+        <section id="projects" class="py-20 px-4 sm:px-6 lg:px-8 bg-background-dark">
+            <div class="max-w-7xl mx-auto">
+                <h2 class="text-4xl font-bold text-center mb-16 text-white">Featured Projects</h2>
+
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                    <!-- Project Card 1 -->
+                    <div class="bg-card-dark p-6 rounded-xl shadow-2xl hover:shadow-primary/30 transition duration-300 transform hover:-translate-y-1 border border-card-dark hover:border-primary/40">
+                        <h3 class="text-2xl font-bold mb-3 text-white">E-commerce Backend API</h3>
+                        <p class="text-sm text-primary mb-4">Node.js, Express, MongoDB</p>
+                        <p class="text-gray-400 mb-6">A high-performance RESTful API supporting millions of products, user authentication, and secure payment processing integration. Focused on scalability and low latency responses.</p>
+                        <div class="flex space-x-4">
+                            <a href="#" class="text-primary hover:text-indigo-400 font-medium transition duration-300">View Live (Mock) &rarr;</a>
+                            <a href="#" class="text-gray-400 hover:text-white transition duration-300">GitHub (Mock)</a>
+                        </div>
+                    </div>
+
+                    <!-- Project Card 2 -->
+                    <div class="bg-card-dark p-6 rounded-xl shadow-2xl hover:shadow-primary/30 transition duration-300 transform hover:-translate-y-1 border border-card-dark hover:border-primary/40">
+                        <h3 class="text-2xl font-bold mb-3 text-white">Real-Time Chat Application</h3>
+                        <p class="text-sm text-primary mb-4">React, WebSocket, TypeScript</p>
+                        <p class="text-gray-400 mb-6">A modern, responsive chat application built with React, leveraging WebSockets for instant message delivery and TypeScript for robust, type-safe development.</p>
+                        <div class="flex space-x-4">
+                            <a href="#" class="text-primary hover:text-indigo-400 font-medium transition duration-300">View Live (Mock) &rarr;</a>
+                            <a href="#" class="text-gray-400 hover:text-white transition duration-300">GitHub (Mock)</a>
+                        </div>
+                    </div>
+
+                    <!-- Project Card 3 -->
+                    <div class="bg-card-dark p-6 rounded-xl shadow-2xl hover:shadow-primary/30 transition duration-300 transform hover:-translate-y-1 border border-card-dark hover:border-primary/40">
+                        <h3 class="text-2xl font-bold mb-3 text-white">Data Visualization Dashboard</h3>
+                        <p class="text-sm text-primary mb-4">Next.js, D3.js, Tailwind CSS</p>
+                        <p class="text-gray-400 mb-6">An analytics dashboard using D3.js to render complex data sets into interactive charts and graphs, all styled beautifully with Tailwind CSS for mobile and desktop views.</p>
+                        <div class="flex space-x-4">
+                            <a href="#" class="text-primary hover:text-indigo-400 font-medium transition duration-300">View Live (Mock) &rarr;</a>
+                            <a href="#" class="text-gray-400 hover:text-white transition duration-300">GitHub (Mock)</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Contact Section -->
+        <section id="contact" class="py-20 px-4 sm:px-6 lg:px-8 bg-card-dark border-t border-primary/20">
+            <div class="max-w-xl mx-auto text-center">
+                <h2 class="text-4xl font-bold mb-4 text-white">Let's Connect</h2>
+                <p class="text-xl text-gray-400 mb-12">I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.</p>
+
+                <!-- Mock Contact Form (Since this is a static HTML file, the form is for display only) -->
+                <form class="space-y-6 text-left">
+                    <div>
+                        <label for="name" class="block text-sm font-medium text-gray-300 mb-1">Name</label>
+                        <input type="text" id="name" name="name" class="w-full px-4 py-3 bg-background-dark border border-gray-700 rounded-lg focus:border-primary focus:ring-primary text-white transition duration-200" placeholder="Your Name">
+                    </div>
+                    <div>
+                        <label for="email" class="block text-sm font-medium text-gray-300 mb-1">Email</label>
+                        <input type="email" id="email" name="email" class="w-full px-4 py-3 bg-background-dark border border-gray-700 rounded-lg focus:border-primary focus:ring-primary text-white transition duration-200" placeholder="your.email@example.com">
+                    </div>
+                    <div>
+                        <label for="message" class="block text-sm font-medium text-gray-300 mb-1">Message</label>
+                        <textarea id="message" name="message" rows="4" class="w-full px-4 py-3 bg-background-dark border border-gray-700 rounded-lg focus:border-primary focus:ring-primary text-white transition duration-200" placeholder="Tell me about your project..."></textarea>
+                    </div>
+                    
+                    <button type="submit" class="w-full bg-primary hover:bg-indigo-700 text-white font-bold py-3 rounded-lg shadow-lg shadow-primary/30 transition duration-300 transform hover:scale-[1.01]">
+                        Send Message (Mock)
+                    </button>
+                    <p class="text-xs text-gray-500 pt-2 text-center">Note: This is a static form. Please replace the `action` attribute in a real deployment or link to an email service.</p>
+                </form>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-background-dark py-8 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-gray-500">
+            <p>&copy; <span id="current-year"></span> Your Name. All rights reserved.</p>
+            <div class="mt-4 space-x-4">
+                <a href="#" class="text-gray-400 hover:text-primary transition duration-300">LinkedIn</a>
+                <span class="text-gray-600">|</span>
+                <a href="#" class="text-gray-400 hover:text-primary transition duration-300">GitHub</a>
+                <span class="text-gray-600">|</span>
+                <a href="mailto:your.email@example.com" class="text-gray-400 hover:text-primary transition duration-300">Email</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Mobile Menu and Footer Year -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            // 1. Mobile Menu Toggle
+            mobileMenuButton.addEventListener('click', () => {
+                const isExpanded = mobileMenuButton.getAttribute('aria-expanded') === 'true' || false;
+                mobileMenuButton.setAttribute('aria-expanded', !isExpanded);
+                mobileMenu.classList.toggle('hidden');
+            });
+
+            // 2. Hide Mobile Menu when a link is clicked
+            mobileMenu.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                    mobileMenuButton.setAttribute('aria-expanded', 'false');
+                });
+            });
+
+            // 3. Set Current Year in Footer
+            document.getElementById('current-year').textContent = new Date().getFullYear();
+        });
+    </script>
+
+</body>
+</html>
